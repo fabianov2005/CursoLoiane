@@ -1,21 +1,81 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+<!-- <div style="align-content: flex-start">
+    <div class="row">
+        <div class="col">
+            <h1>Treinamento Curso Loiane</h1>
+        </div>  
+    </div>    
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nav class="navbar navbar-dark bg-primary">
+    <h4 style="font-style: oblique"> Estudo sobre Class Bind</h4>
+</nav>
+<h3>Example heading <span class="label label-default">New</span></h3>
+  <h6>Tipos de Mensagem de Alerta:</h6>
+  <select #classe (change) = "0">    
+      <option value="alert-success"> Sucesso</option>
+      <option value="alert-info"> Informação</option>
+      <option value="alert-warning"> Alerta</option>
+      <option value="alert-danger"> Erro</option>
+  </select> 
+
+  <div class="alert {{ classe.value }}" role="alert">Tipo de Mensagem Selecionada</div>
+
+  <div class="alert" role="alert" [class.alert-success]="classe.value=='alert-success'">Sucesso</div>
+  <div class="alert" role="alert" [class.alert-info]="classe.value=='alert-info'">Informação</div>
+  <div class="alert" role="alert" [class.alert-warning]="classe.value=='alert-warning'">Aviso</div>
+  <div class="alert" role="alert" [class.alert-danger]="classe.value=='alert-danger'">Perigo</div>
+
+  <div class="form-group">
+      <textarea class="form-control"rows="7"> {{ estudoclassbiding }}</textarea>
+  </div>
+
+
+  <nav class="navbar navbar-dark bg-primary">
+      <h4> Estudo sobre Style Binding</h4>
+  </nav>    
+
+  <div class="alert alert-success" role="alert" [style.display]="classe.value=='alert-success' ? 'block' : 'none'">Selecionou a mensagem de sucesso.</div>
+
+  <div class="form-group">
+      <textarea class="form-control"rows="7"> {{ estudostylebiding }}</textarea>
+  </div>
+
+  <nav class="navbar navbar-dark bg-primary">
+      <h4> Estudo sobre Event Binding</h4>
+  </nav>    
+
+  <br>
+  <br>
+  <button class = "btn btn-primary" (click) = "botaoclicado()"> Ação com (click) </button>
+  <br>
+  <br>
+  <button class = "btn btn-primary" on-click = "botaoclicado()"> Ação com on-click </button>
+
+  <div class="row margin">
+      <div class="col-2">
+          <h3><span class="label label-primary">Aumentar Fonte</span></h3>
+          <input type="text"  class="form-control" (blur)="aumentarFonte(campoEntrada.value)" #campoEntrada>   
+      </div>
+  </div>
+  <br>
+  <br>
+  <input type="text" id="saidaTexto" (keyup)="onKeyUp($event)">
+  <output type="text">{{ valorAtual }}</output>
+  <br>
+  <br>
+  <input type="text" id="somaValor" (keyup)="somarValor($event)">
+  <output type="text">{{ somavalores }}</output>        
+  <br>
+  <br> -->
+  <section class="two-way-data-binding">
+      <article>
+          <h3> two-way-data-binding</h3>
+          <div>
+            
+          </div>
+      </article>
+  </section>
+  
+  
 
 <router-outlet></router-outlet>
