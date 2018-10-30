@@ -14,6 +14,11 @@ export class AppComponent {
   valorStringAtual: string;
   valor: string;
 
+  // tslint:disable-next-line:no-inferrable-types
+  nome = 'Digite o cavlo aqui ...';
+
+  nome2 = 'Digite o cavlo aqui ...';
+
   estudostylebiding = '<div class="alert alert-success" role="alert" [style.display]="classe.value==' +
                       'alert-success' +
                       ' ? ' +
@@ -22,7 +27,7 @@ export class AppComponent {
                       'none' +
                       '">Selecionou a mensagem de sucesso.</div>';
 
-  estudoclassbiding = '<h6>Tipos de Mensagem de Alerta:</h6>'+
+  estudoclassbiding = '<h6>Tipos de Mensagem de Alerta:</h6>' +
                       '<select #classe (change) = "0">      ' +
                       '   <option value="alert-success"> Sucesso</option>' +
                       '   <option value="alert-info"> Informação</option>' +
@@ -36,7 +41,7 @@ export class AppComponent {
                       'alert-success' +
                       '">' +
                       'Sucesso</div>' +
-                      ' <div class="alert" role="alert" [class.alert-info]="classe.value=='+
+                      ' <div class="alert" role="alert" [class.alert-info]="classe.value==' +
                       'alert-info' +
                       '">' +
                       'Informação</div>' +
@@ -46,6 +51,8 @@ export class AppComponent {
                       '<div class="alert" role="alert" [class.alert-danger]="classe.value==' +
                       'alert-danger' +
                       '>Perigo</div>';
+
+  pessoa: any = { nome: 'Fabiano', idade: 43, cpf: '76327698468' };
 
 
   botaoclicado() {
@@ -69,6 +76,12 @@ export class AppComponent {
 
   aumentaFonte(campoentrada: string) {
     campoentrada = campoentrada.toUpperCase();
+  }
+
+  atualizaNome(wnome: string) {
+
+    this.nome = wnome;
+
   }
 
 }

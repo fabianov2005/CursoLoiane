@@ -67,15 +67,32 @@
   <output type="text">{{ somavalores }}</output>        
   <br>
   <br> -->
-  <section class="two-way-data-binding">
+  <!-- <section class="two-way-data-binding">
       <article>
-          <h3> two-way-data-binding</h3>
-          <div>
-            
-          </div>
-      </article>
-  </section>
-  
-  
+   
+          <input type = "text" [ngModel] = "nome2" (ngModelChange) = "nome2 = $event"/> 
+          <p>Você digitou o nome2: {{ nome2 }}</p>    
 
+          <input type="text" 
+          (keyup)="atualizaNome(caixainput.value)" 
+          (input) = "nome = $event.caixainput.value" #caixainput/> 
+          <p>Você digitou o nome2: {{ nome }}</p>
+
+
+          <h3> two-way-data-binding</h3>
+          <input type="text" [(ngModel)] = "nome3"/> 
+          <br>
+          <p>Nome da Pessoa</p>          
+          <input type="" [(ngModel)] = "pessoa.nome"/>;          
+          <br>
+          <p>Idade da Pessoa</p>
+          <input type="" [(ngModel)] = "pessoa.idade"/>;
+          <br>
+          <p>Idade da Pessoa</p>
+          <input type="" [(ngModel)] = "pessoa.cpf"/>;
+
+
+        </article>
+  </section> -->  
+<app-data-binding></app-data-binding>
 <router-outlet></router-outlet>

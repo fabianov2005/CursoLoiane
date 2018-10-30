@@ -1,0 +1,10 @@
+<p>
+  data-binding works!
+</p>
+<section class="input-output-properties">
+  <article>
+    <h3>Input/Output Properties</h3>
+    <app-input-property [nome]="nomeDoCurso"></app-input-property>
+    <app-output-property [valor]="10" (mudouValor)="onMudouValor($event)"></app-output-property>
+  </article>
+</section>
