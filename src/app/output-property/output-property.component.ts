@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, ViewChild, ElementRef } from '@angular/core';
 import { EventEmitter } from 'events';
 
 @Component({
@@ -9,23 +9,31 @@ import { EventEmitter } from 'events';
 export class OutputPropertyComponent implements OnInit {
 
   // tslint:disable-next-line:no-inferrable-types
-  @Input() valor: number = 0;
+  @Input() valor = 0;
 
-  @Output() mudouValor = new EventEmitter();
+  // @Output() mudouValor = new EventEmitter();
 
-  constructor() { }
+  // @ViewChild('campoInput') campoValorInput: HTMLElement;
+  @ViewChild('campoInput') campoValorInput: ElementRef;
+
+   constructor() {
+   }
 
   ngOnInit() {
   }
 
   decrementa() {
-    this.valor -= 1;
-    this.mudouValor.emit('Mudou o valor - Decrementou');
+    // this.valor --;
+    this.campoValorInput.nativeElement.value --;
+    console.log(this.campoValorInput.nativeElement.value);
+    // this.mudouValor.emit({novoValor: this.valor; });
                     }
 
   incrementa() {
-    this.valor += 1;
-    this.mudouValor.emit('Mudou o valor - Incrementou');
+    // this.valor ++;
+    this.campoValorInput.nativeElement.value ++;
+    console.log(this.campoValorInput.nativeElement.value);
+    // this.mudouValor.emit({novoValor: this.valor; });
   }
 
   onMudouValor(evento) {
